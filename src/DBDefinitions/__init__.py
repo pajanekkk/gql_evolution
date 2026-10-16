@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import create_async_engine
 
 from .BaseModel import BaseDBModel, IDType, UUIDColumn, UUIDFKey
 from .Domain_Events import EventModel, EventInvitationModel, EventTypeModel
+from .Personalities2 import ContactModel, EmploymentModel
 
 
 async def startEngine(connectionstring, makeDrop=False, makeUp=True):
@@ -18,7 +19,6 @@ async def startEngine(connectionstring, makeDrop=False, makeUp=True):
 
     asyncEngine = create_async_engine(connectionstring, pool_pre_ping=True)
 
- 
     async with asyncEngine.begin() as conn:
         if makeDrop:
             await conn.run_sync(BaseDBModel.metadata.drop_all)
@@ -37,9 +37,7 @@ async def startEngine(connectionstring, makeDrop=False, makeUp=True):
     # )
 
     async_session_factory = async_sessionmaker(
-        asyncEngine,
-        expire_on_commit=False,
-        class_=AsyncSession
+        asyncEngine, expire_on_commit=False, class_=AsyncSession
     )
 
     async_sessionMaker = async_scoped_session(
@@ -49,7 +47,9 @@ async def startEngine(connectionstring, makeDrop=False, makeUp=True):
 
     return async_sessionMaker
 
+
 import os
+
 
 def ComposeConnectionString():
     """Odvozuje connectionString z promennych prostredi (nebo z Docker Envs, coz je fakticky totez).
@@ -67,10 +67,17 @@ def ComposeConnectionString():
     return connectionstring
 
 
-
 __all__ = [
-    'BaseDBModel', 'IDType', 'UUIDColumn', 'UUIDFKey',
-    'EventModel', 'EventInvitationModel', 'EventTypeModel',
-    'startEngine', 'ComposeConnectionString', 'EventTypeModel'
+    "BaseDBModel",
+    "IDType",
+    "UUIDColumn",
+    "UUIDFKey",
+    "EventModel",
+    "EventInvitationModel",
+    "EventTypeModel",
+    "startEngine",
+    "ComposeConnectionString",
+    "EventTypeModelContactModel",
+    "EmploymentModel",
+    "ContactModel",
 ]
-

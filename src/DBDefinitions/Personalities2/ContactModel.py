@@ -1,4 +1,5 @@
 import datetime
+from operator import index
 from typing import Optional, List
 from sqlalchemy import (
     Column,
@@ -19,6 +20,7 @@ from src.DBDefinitions.BaseModel import BaseDBModel, UUIDColumn, UUIDFKey, IDTyp
 #
 ###########################################################################################################################
 
+
 class ContactModel(BaseDBModel):
     __tablename__ = "contacts"
 
@@ -27,33 +29,18 @@ class ContactModel(BaseDBModel):
     parent_id_attribute_name = "parent_id"
     children_attribute_name = "children"
 
-    personality_id: Mapped[Optional[IDType]] = mapped_column(
-        ForeignKey("users.id"),
-        index=True,
-        nullable=True,
-        default=None,
-        comment="osoba, které se kontakt týká"
+    personality_id: Mapped[Optional[IDType]] = UUIDFKey(
+        nullable=True, index=True, default=None, comment="osoba, které se kontakt týká"
     )
+
     contact_type: Mapped[Optional[str]] = mapped_column(
         default=None,
         nullable=True,
-        comment="typ kontaktu, např. private_email, private_phone, emergency_contact"
+        comment="typ kontaktu, např. private_email, private_phone, emergency_contact",
     )
     value: Mapped[Optional[str]] = mapped_column(
-        default=None,
-        nullable=True,
-        comment="hodnota kontaktu"
+        default=None, nullable=True, comment="hodnota kontaktu"
     )
     preferred: Mapped[Optional[bool]] = mapped_column(
-        default=False,
-        nullable=True,
-        comment="zda jde o preferovaný kontakt"
-    )
-
-    user = relationship(
-        "UserModel",
-        back_populates="contacts",
-        viewonly=True,
-        uselist=False,
-        init=False,
+        default=False, nullable=True, comment="zda jde o preferovaný kontakt"
     )

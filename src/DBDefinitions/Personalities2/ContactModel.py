@@ -1,33 +1,12 @@
-import datetime
-from operator import index
-from typing import Optional, List
-from sqlalchemy import (
-    Column,
-    String,
-    DateTime,
-    ForeignKey,
-)
+from typing import Optional
+
 from sqlalchemy.orm import Mapped, mapped_column
 
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import relationship
-
-from src.DBDefinitions.BaseModel import BaseDBModel, UUIDColumn, UUIDFKey, IDType
-###########################################################################################################################
-#
-# zde definujte sve SQLAlchemy modely
-# je-li treba, muzete definovat modely obsahujici jen id polozku, na ktere se budete odkazovat
-#
-###########################################################################################################################
+from src.DBDefinitions.BaseModel import BaseDBModel, UUIDFKey, IDType
 
 
 class ContactModel(BaseDBModel):
     __tablename__ = "contacts"
-
-    path_attribute_name = "path"
-    parent_attribute_name = "parent"
-    parent_id_attribute_name = "parent_id"
-    children_attribute_name = "children"
 
     personality_id: Mapped[Optional[IDType]] = UUIDFKey(
         nullable=True, index=True, default=None, comment="osoba, které se kontakt týká"

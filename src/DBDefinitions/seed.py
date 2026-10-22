@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import datetime
 import os
 import uuid
 
 from contextlib import asynccontextmanager
 
+import sqlalchemy
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import inspect as sa_inspect
 from sqlalchemy.exc import NoInspectionAvailable
@@ -82,8 +84,20 @@ async def init_database_data(session: AsyncSession, get_demodata=get_demodata) -
     modelIndex = dict((DBModel.__tablename__, DBModel) for DBModel in ModelsToImport)
     print(f"Models to import: {ModelsToImport}\nTable names: {table_names}\nModel index: {modelIndex}", flush=True)
 
+    # readJsonFile prevadi jen startdate/enddate/lastchange/created,
+    # ostatni DateTime sloupce (napr. started/finished) prijdou jako str
+    for Model in ModelsToImport:
+        for row in json_data.get(Model.__tablename__) or []:
+            for column in Model.__table__.columns:
+                value = row.get(column.name)
+                if isinstance(value, str) and isinstance(column.type, sqlalchemy.DateTime):
+                    row[column.name] = datetime.datetime.fromisoformat(value).replace(tzinfo=None)
+
     @asynccontextmanager
     async def session_maker():
+        # ImportModels vola execute() (autobegin) a pak session.begin() na teze session
+        if session.in_transaction():
+            await session.commit()
         try:
             yield session
         finally:

@@ -77,7 +77,6 @@ __all__ = [
     "EventTypeModel",
     "startEngine",
     "ComposeConnectionString",
-    "EventTypeModelContactModel",
     "EmploymentModel",
     "ContactModel",
 ]

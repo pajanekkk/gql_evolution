@@ -4,6 +4,98 @@
     "events": [
     ],
     "event_invitations": [
+    ],
+    "contacts": [
+        {
+            "id": "8647039b-9112-4762-8a8a-e975129d17e0",
+            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "contact_type": "private_email",
+            "value": "ada.beckova@example.com",
+            "preferred": true
+        },
+        {
+            "id": "4fa65e28-e073-40c8-b146-b08afbdeec46",
+            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "contact_type": "private_phone",
+            "value": "+420 777 123 456",
+            "preferred": false
+        },
+        {
+            "id": "528f36d0-ff5e-4e48-9d9e-143262ac425f",
+            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "contact_type": "emergency_contact",
+            "value": "Petr Beček, +420 603 987 654",
+            "preferred": false
+        },
+        {
+            "id": "f898e915-397a-414c-a259-5f192e72e4ae",
+            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "contact_type": "private_phone",
+            "value": "+420 731 555 210",
+            "preferred": true
+        },
+        {
+            "id": "cd72c9a9-2c73-46f4-8ca6-2253db9a2a31",
+            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "contact_type": "private_email",
+            "value": "adam.kastak@example.com",
+            "preferred": false
+        },
+        {
+            "id": "fef87f83-6be5-43f0-9bc6-89b4a6c556cd",
+            "personality_id": "2932537d-96cf-491d-977d-f09e70210b03",
+            "contact_type": "private_email",
+            "value": "adela.holeckova@example.com",
+            "preferred": true
+        }
+    ],
+    "employments": [
+        {
+            "id": "509aa2d7-905b-4a28-91fc-85790dc81948",
+            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "employer_name": "ABC s.r.o.",
+            "position": "Software Developer",
+            "department": "Vývoj",
+            "started": "2021-03-01T00:00:00",
+            "finished": "2024-06-30T00:00:00",
+            "description": "Vývoj backendových služeb v Pythonu"
+        },
+        {
+            "id": "ec928521-3648-4100-a4f1-556c2b471837",
+            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "employer_name": "Datové systémy a.s.",
+            "position": "Senior Software Developer",
+            "department": "Integrace",
+            "started": "2024-07-01T00:00:00",
+            "description": "Návrh a vývoj GraphQL API"
+        },
+        {
+            "id": "acd72033-9f13-4b55-bb96-62fe68a05469",
+            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "employer_name": "Nemocnice Brno",
+            "position": "Analytik",
+            "department": "IT oddělení",
+            "started": "2019-09-01T00:00:00",
+            "finished": "2022-12-31T00:00:00",
+            "description": "Analýza požadavků a správa nemocničního informačního systému"
+        },
+        {
+            "id": "5f74ff92-fb6e-4623-8fc4-ca662d1fdaa3",
+            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "employer_name": "ABC s.r.o.",
+            "position": "Product Owner",
+            "department": "Vývoj",
+            "started": "2023-01-01T00:00:00",
+            "description": "Řízení backlogu a priorit vývojového týmu"
+        },
+        {
+            "id": "5011d85b-dd99-4bb4-9271-18285665fad4",
+            "personality_id": "2932537d-96cf-491d-977d-f09e70210b03",
+            "employer_name": "Stavby Morava s.r.o.",
+            "position": "Projektová manažerka",
+            "department": "Realizace staveb",
+            "started": "2015-04-01T00:00:00",
+            "description": "Koordinace stavebních zakázek"
+        }
     ]
-
 }

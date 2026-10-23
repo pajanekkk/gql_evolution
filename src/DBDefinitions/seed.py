@@ -80,7 +80,10 @@ async def init_database_data(session: AsyncSession, get_demodata=get_demodata) -
         and is_sqlalchemy_model(Model)
         and hasattr(Model, "__tablename__")
     ]
-    table_names = [Model.__tablename__ for Model in ModelsToImport]
+    # ImportModels vklada v poradi seznamu, rodicovske tabulky (FK) musi jit drive
+    table_order = {table.name: i for i, table in enumerate(BaseDBModel.metadata.sorted_tables)}
+    ModelsToImport.sort(key=lambda Model: table_order[Model.__tablename__])
+    table_names =[Model.__tablename__ for Model in ModelsToImport]
     modelIndex = dict((DBModel.__tablename__, DBModel) for DBModel in ModelsToImport)
     print(f"Models to import: {ModelsToImport}\nTable names: {table_names}\nModel index: {modelIndex}", flush=True)
 

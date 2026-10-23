@@ -1,5 +1,6 @@
 from typing import Optional
 
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 
 from src.DBDefinitions.BaseModel import BaseDBModel, UUIDFKey, IDType
@@ -8,14 +9,16 @@ from src.DBDefinitions.BaseModel import BaseDBModel, UUIDFKey, IDType
 class ContactModel(BaseDBModel):
     __tablename__ = "contacts"
 
-    personality_id: Mapped[Optional[IDType]] = UUIDFKey(
-        nullable=True, index=True, default=None, comment="osoba, které se kontakt týká"
+    user_id: Mapped[Optional[IDType]] = UUIDFKey(
+        nullable=True, index=True, default=None, comment="uživatel, kterého se kontakt týká"
     )
 
-    contact_type: Mapped[Optional[str]] = mapped_column(
-        default=None,
+    contact_type_id: Mapped[Optional[IDType]] = mapped_column(
+        ForeignKey("contacttypes.id"),
+        index=True,
         nullable=True,
-        comment="typ kontaktu, např. private_email, private_phone, emergency_contact",
+        default=None,
+        comment="typ kontaktu z katalogu (stromu) contacttypes, např. Soukromý e-mail",
     )
     value: Mapped[Optional[str]] = mapped_column(
         default=None, nullable=True, comment="hodnota kontaktu"

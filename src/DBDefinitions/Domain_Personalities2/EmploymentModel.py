@@ -9,11 +9,11 @@ from src.DBDefinitions.BaseModel import BaseDBModel, UUIDFKey, IDType
 class EmploymentModel(BaseDBModel):
     __tablename__ = "employments"
 
-    personality_id: Mapped[Optional[IDType]] = UUIDFKey(
+    user_id: Mapped[Optional[IDType]] = UUIDFKey(
         index=True,
         nullable=True,
         default=None,
-        comment="osoba, které se zaměstnání týká",
+        comment="uživatel, kterého se zaměstnání týká",
     )
     employer_name: Mapped[Optional[str]] = mapped_column(
         default=None, nullable=True, comment="název zaměstnavatele"

@@ -172,6 +172,29 @@ def get_relationships(model_cls: type) -> dict[str, RelationshipProperty]:
     }
 
 
+def coerce_column_value(model_cls: type, key: str, value: typing.Any) -> typing.Any:
+    """JSON umi jen str, datumy a UUID je treba prevest podle typu sloupce."""
+    if not isinstance(value, str):
+        return value
+
+    try:
+        python_type = inspect(model_cls).columns[key].type.python_type
+    except NotImplementedError:
+        return value
+
+    try:
+        if python_type is datetime.datetime:
+            return datetime.datetime.fromisoformat(value).replace(tzinfo=None)
+        if python_type is datetime.date:
+            return datetime.date.fromisoformat(value)
+        if python_type is uuid.UUID:
+            return uuid.UUID(value)
+    except ValueError as e:
+        raise CliError(f"Invalid value for '{key}': {e}") from e
+
+    return value
+
+
 def split_columns_and_relationships(
     model_cls: type,
     payload: JsonDict,
@@ -184,7 +207,7 @@ def split_columns_and_relationships(
 
     for key, value in payload.items():
         if key in column_names:
-            column_values[key] = value
+            column_values[key] = coerce_column_value(model_cls, key, value)
         elif key in relationships:
             relationship_values[key] = value
         else:

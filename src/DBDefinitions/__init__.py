@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import create_async_engine
 
 from .BaseModel import BaseDBModel, IDType, UUIDColumn, UUIDFKey
 from .Domain_Events import EventModel, EventInvitationModel, EventTypeModel
-from .Personalities2 import ContactModel, EmploymentModel
+from .Domain_Personalities2 import ContactModel, ContactTypeModel, EmploymentModel
 
 
 async def startEngine(connectionstring, makeDrop=False, makeUp=True):
@@ -79,4 +79,5 @@ __all__ = [
     "ComposeConnectionString",
     "EmploymentModel",
     "ContactModel",
+    "ContactTypeModel",
 ]

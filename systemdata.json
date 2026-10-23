@@ -5,54 +5,125 @@
     ],
     "event_invitations": [
     ],
+    "contacttypes": [
+        {
+            "id": "0ed2a867-063f-4681-988b-73b006a93400",
+            "name": "Kontakt",
+            "name_en": "Contact",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400"
+        },
+        {
+            "id": "1922361f-a4a2-4f8e-9155-e2afaaa7f9f0",
+            "parent_id": "0ed2a867-063f-4681-988b-73b006a93400",
+            "name": "E-mail",
+            "name_en": "E-mail",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0"
+        },
+        {
+            "id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "parent_id": "1922361f-a4a2-4f8e-9155-e2afaaa7f9f0",
+            "name": "Soukromý e-mail",
+            "name_en": "Private e-mail",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0/fa8aaafd-a338-402e-8c2e-ae52f5805236"
+        },
+        {
+            "id": "c7328e37-0557-4fe4-91e9-7c9480b1c799",
+            "parent_id": "1922361f-a4a2-4f8e-9155-e2afaaa7f9f0",
+            "name": "Pracovní e-mail",
+            "name_en": "Work e-mail",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0/c7328e37-0557-4fe4-91e9-7c9480b1c799"
+        },
+        {
+            "id": "1afe3e4e-91c2-4d1b-8829-8d8812d28a33",
+            "parent_id": "0ed2a867-063f-4681-988b-73b006a93400",
+            "name": "Telefon",
+            "name_en": "Phone",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33"
+        },
+        {
+            "id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
+            "parent_id": "1afe3e4e-91c2-4d1b-8829-8d8812d28a33",
+            "name": "Soukromý telefon",
+            "name_en": "Private phone",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33/19327afc-d7ae-4b7b-8ecc-19273763c26d"
+        },
+        {
+            "id": "204be219-12b2-4cb9-8414-cbdb75fc6a18",
+            "parent_id": "1afe3e4e-91c2-4d1b-8829-8d8812d28a33",
+            "name": "Pracovní telefon",
+            "name_en": "Work phone",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33/204be219-12b2-4cb9-8414-cbdb75fc6a18"
+        },
+        {
+            "id": "8da078b6-2ecf-478a-a7d2-2f870390fe75",
+            "parent_id": "0ed2a867-063f-4681-988b-73b006a93400",
+            "name": "Nouzový kontakt",
+            "name_en": "Emergency contact",
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/8da078b6-2ecf-478a-a7d2-2f870390fe75"
+        }
+    ],
     "contacts": [
         {
             "id": "8647039b-9112-4762-8a8a-e975129d17e0",
-            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
-            "contact_type": "private_email",
+            "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "value": "ada.beckova@example.com",
             "preferred": true
         },
         {
             "id": "4fa65e28-e073-40c8-b146-b08afbdeec46",
-            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
-            "contact_type": "private_phone",
+            "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
             "value": "+420 777 123 456",
             "preferred": false
         },
         {
             "id": "528f36d0-ff5e-4e48-9d9e-143262ac425f",
-            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
-            "contact_type": "emergency_contact",
+            "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "contact_type_id": "8da078b6-2ecf-478a-a7d2-2f870390fe75",
             "value": "Petr Beček, +420 603 987 654",
             "preferred": false
         },
         {
             "id": "f898e915-397a-414c-a259-5f192e72e4ae",
-            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
-            "contact_type": "private_phone",
+            "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
             "value": "+420 731 555 210",
             "preferred": true
         },
         {
             "id": "cd72c9a9-2c73-46f4-8ca6-2253db9a2a31",
-            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
-            "contact_type": "private_email",
+            "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "value": "adam.kastak@example.com",
             "preferred": false
         },
         {
             "id": "fef87f83-6be5-43f0-9bc6-89b4a6c556cd",
-            "personality_id": "2932537d-96cf-491d-977d-f09e70210b03",
-            "contact_type": "private_email",
+            "user_id": "2932537d-96cf-491d-977d-f09e70210b03",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "value": "adela.holeckova@example.com",
             "preferred": true
+        },
+        {
+            "id": "814d2fd3-50ed-49f5-b326-009527c5df10",
+            "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "zdenka.simeckova@example.com",
+            "preferred": true
+        },
+        {
+            "id": "05a35459-ca17-484d-b5b6-7c097643240e",
+            "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
+            "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
+            "value": "+420 724 318 902",
+            "preferred": false
         }
     ],
     "employments": [
         {
             "id": "509aa2d7-905b-4a28-91fc-85790dc81948",
-            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
             "employer_name": "ABC s.r.o.",
             "position": "Software Developer",
             "department": "Vývoj",
@@ -62,7 +133,7 @@
         },
         {
             "id": "ec928521-3648-4100-a4f1-556c2b471837",
-            "personality_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
             "employer_name": "Datové systémy a.s.",
             "position": "Senior Software Developer",
             "department": "Integrace",
@@ -71,7 +142,7 @@
         },
         {
             "id": "acd72033-9f13-4b55-bb96-62fe68a05469",
-            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
             "employer_name": "Nemocnice Brno",
             "position": "Analytik",
             "department": "IT oddělení",
@@ -81,7 +152,7 @@
         },
         {
             "id": "5f74ff92-fb6e-4623-8fc4-ca662d1fdaa3",
-            "personality_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
             "employer_name": "ABC s.r.o.",
             "position": "Product Owner",
             "department": "Vývoj",
@@ -90,12 +161,31 @@
         },
         {
             "id": "5011d85b-dd99-4bb4-9271-18285665fad4",
-            "personality_id": "2932537d-96cf-491d-977d-f09e70210b03",
+            "user_id": "2932537d-96cf-491d-977d-f09e70210b03",
             "employer_name": "Stavby Morava s.r.o.",
             "position": "Projektová manažerka",
             "department": "Realizace staveb",
             "started": "2015-04-01T00:00:00",
             "description": "Koordinace stavebních zakázek"
+        },
+        {
+            "id": "3938be81-28e0-418c-9a75-f7f38f1e5bc0",
+            "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
+            "employer_name": "Účetní kancelář Novák s.r.o.",
+            "position": "Účetní",
+            "department": "Mzdy a personalistika",
+            "started": "2016-02-01T00:00:00",
+            "finished": "2020-08-31T00:00:00",
+            "description": "Zpracování mezd a personální agendy"
+        },
+        {
+            "id": "2fe8402d-29e7-4dd7-8094-2c34724e7f40",
+            "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
+            "employer_name": "Datové systémy a.s.",
+            "position": "HR specialistka",
+            "department": "Personální oddělení",
+            "started": "2020-09-01T00:00:00",
+            "description": "Nábor a správa personálních dat"
         }
     ]
 }

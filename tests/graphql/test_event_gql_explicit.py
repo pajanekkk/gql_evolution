@@ -279,3 +279,54 @@ async def test_gql_event_insert_rollback_on_error_explicit(SchemaExecutor):
     else:
         payload = second["data"]["eventInsert"]
         assert "Error" in payload["__typename"], payload
+
+
+@pytest.mark.explicit
+@pytest.mark.asyncio
+async def test_gql_event_insert_rolls_back_partial_write_when_service_fails_explicit(SchemaExecutor, monkeypatch):
+    """Service error after a flushed write must roll back the whole mutation."""
+
+    from src.ServiceDefinitions.BaseService import ServiceExceptionWithCode
+    from src.ServiceDefinitions.Domain_Events.EventService import EventService
+
+    original_create = EventService.Create
+
+    async def create_then_fail(cls, ctx, entity, extraAttributes=None):
+        await original_create(ctx=ctx, entity=entity, extraAttributes=extraAttributes)
+        raise ServiceExceptionWithCode("second step failed", code="pytest-partial-write")
+
+    monkeypatch.setattr(EventService, "Create", classmethod(create_then_fail))
+
+    event_id = str(uuid.uuid4())
+    result = await SchemaExecutor(
+        query="""
+        mutation EventInsert($event: EventInsertGQLModel!) {
+          eventInsert(event: $event) {
+            __typename
+            ... on EventGQLModel { id }
+            ... on EventGQLModelInsertError { msg code }
+          }
+        }
+        """,
+        variable_values={
+            "event": {
+                "id": event_id,
+                "name": "pytest partial write",
+                "mastereventId": str(EXPLICIT_PARENT_EVENT_ID),
+            }
+        },
+    )
+
+    payload = result["data"]["eventInsert"]
+    assert payload["__typename"] == "EventGQLModelInsertError", payload
+    assert "pytest-partial-write" in payload["msg"]
+
+    monkeypatch.undo()
+    read = await SchemaExecutor(
+        query="query EventById($id: UUID!) { eventById(id: $id) { id name lastchange } }",
+        variable_values={"id": event_id},
+    )
+    assert read.get("errors") is None
+    # load_with_loader vraci pro neexistujici id stub jen s id (federace), DB pole jsou prazdna
+    assert read["data"]["eventById"]["name"] is None
+    assert read["data"]["eventById"]["lastchange"] is None

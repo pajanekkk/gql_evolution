@@ -1,65 +1,135 @@
 {
-    "eventtypes": [
-    ],
-    "events": [
-    ],
-    "event_invitations": [
-    ],
+    "eventtypes": [],
+    "events": [],
+    "event_invitations": [],
     "contacttypes": [
         {
             "id": "0ed2a867-063f-4681-988b-73b006a93400",
             "name": "Kontakt",
             "name_en": "Contact",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         },
         {
             "id": "1922361f-a4a2-4f8e-9155-e2afaaa7f9f0",
             "parent_id": "0ed2a867-063f-4681-988b-73b006a93400",
             "name": "E-mail",
             "name_en": "E-mail",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         },
         {
             "id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "parent_id": "1922361f-a4a2-4f8e-9155-e2afaaa7f9f0",
             "name": "Soukromý e-mail",
             "name_en": "Private e-mail",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0/fa8aaafd-a338-402e-8c2e-ae52f5805236"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0/fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         },
         {
             "id": "c7328e37-0557-4fe4-91e9-7c9480b1c799",
             "parent_id": "1922361f-a4a2-4f8e-9155-e2afaaa7f9f0",
             "name": "Pracovní e-mail",
             "name_en": "Work e-mail",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0/c7328e37-0557-4fe4-91e9-7c9480b1c799"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1922361f-a4a2-4f8e-9155-e2afaaa7f9f0/c7328e37-0557-4fe4-91e9-7c9480b1c799",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         },
         {
             "id": "1afe3e4e-91c2-4d1b-8829-8d8812d28a33",
             "parent_id": "0ed2a867-063f-4681-988b-73b006a93400",
             "name": "Telefon",
             "name_en": "Phone",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         },
         {
             "id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
             "parent_id": "1afe3e4e-91c2-4d1b-8829-8d8812d28a33",
             "name": "Soukromý telefon",
             "name_en": "Private phone",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33/19327afc-d7ae-4b7b-8ecc-19273763c26d"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33/19327afc-d7ae-4b7b-8ecc-19273763c26d",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         },
         {
             "id": "204be219-12b2-4cb9-8414-cbdb75fc6a18",
             "parent_id": "1afe3e4e-91c2-4d1b-8829-8d8812d28a33",
             "name": "Pracovní telefon",
             "name_en": "Work phone",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33/204be219-12b2-4cb9-8414-cbdb75fc6a18"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/1afe3e4e-91c2-4d1b-8829-8d8812d28a33/204be219-12b2-4cb9-8414-cbdb75fc6a18",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         },
         {
             "id": "8da078b6-2ecf-478a-a7d2-2f870390fe75",
             "parent_id": "0ed2a867-063f-4681-988b-73b006a93400",
             "name": "Nouzový kontakt",
             "name_en": "Emergency contact",
-            "path": "0ed2a867-063f-4681-988b-73b006a93400/8da078b6-2ecf-478a-a7d2-2f870390fe75"
+            "path": "0ed2a867-063f-4681-988b-73b006a93400/8da078b6-2ecf-478a-a7d2-2f870390fe75",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        }
+    ],
+    "employmenttypes": [
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01",
+            "name": "Zaměstnání",
+            "name_en": "Employment",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        },
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b02",
+            "parent_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01",
+            "name": "Pracovní poměr",
+            "name_en": "Employment contract",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b02",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        },
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "parent_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b02",
+            "name": "Plný úvazek",
+            "name_en": "Full-time",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b02/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        },
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "parent_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b02",
+            "name": "Zkrácený úvazek",
+            "name_en": "Part-time",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b02/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        },
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b05",
+            "parent_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01",
+            "name": "Dohody o pracích konaných mimo pracovní poměr",
+            "name_en": "Agreements outside employment",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b05",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        },
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b06",
+            "parent_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b05",
+            "name": "Dohoda o provedení práce",
+            "name_en": "Agreement to complete a job (DPP)",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b05/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b06",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        },
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b07",
+            "parent_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b05",
+            "name": "Dohoda o pracovní činnosti",
+            "name_en": "Agreement to perform work (DPČ)",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b05/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b07",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
+        },
+        {
+            "id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b08",
+            "parent_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01",
+            "name": "Samostatná výdělečná činnost",
+            "name_en": "Self-employment",
+            "path": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b01/6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b08",
+            "rbacobject_id": "558077c0-64b1-4015-8f44-8e8618c14a2b"
         }
     ],
     "contacts": [
@@ -68,124 +138,536 @@
             "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
             "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "value": "ada.beckova@example.com",
-            "preferred": true
+            "preferred": true,
+            "rbacobject_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3"
         },
         {
             "id": "4fa65e28-e073-40c8-b146-b08afbdeec46",
             "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
             "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
             "value": "+420 777 123 456",
-            "preferred": false
+            "preferred": false,
+            "rbacobject_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3"
         },
         {
             "id": "528f36d0-ff5e-4e48-9d9e-143262ac425f",
             "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
             "contact_type_id": "8da078b6-2ecf-478a-a7d2-2f870390fe75",
             "value": "Petr Beček, +420 603 987 654",
-            "preferred": false
+            "preferred": false,
+            "rbacobject_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3"
         },
         {
             "id": "f898e915-397a-414c-a259-5f192e72e4ae",
             "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
             "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
             "value": "+420 731 555 210",
-            "preferred": true
+            "preferred": true,
+            "rbacobject_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8"
         },
         {
             "id": "cd72c9a9-2c73-46f4-8ca6-2253db9a2a31",
             "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
             "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "value": "adam.kastak@example.com",
-            "preferred": false
+            "preferred": false,
+            "rbacobject_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8"
         },
         {
             "id": "fef87f83-6be5-43f0-9bc6-89b4a6c556cd",
             "user_id": "2932537d-96cf-491d-977d-f09e70210b03",
             "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "value": "adela.holeckova@example.com",
-            "preferred": true
+            "preferred": true,
+            "rbacobject_id": "2932537d-96cf-491d-977d-f09e70210b03"
         },
         {
             "id": "814d2fd3-50ed-49f5-b326-009527c5df10",
             "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
             "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
             "value": "zdenka.simeckova@example.com",
-            "preferred": true
+            "preferred": true,
+            "rbacobject_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6"
         },
         {
             "id": "05a35459-ca17-484d-b5b6-7c097643240e",
             "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
             "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
             "value": "+420 724 318 902",
-            "preferred": false
+            "preferred": false,
+            "rbacobject_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6"
+        },
+        {
+            "id": "9e1afd4b-9435-419c-b7b0-bf026665a016",
+            "user_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "bohumila.padelkova@example.com",
+            "preferred": true,
+            "rbacobject_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4"
+        },
+        {
+            "id": "c67ad722-b358-491f-9c53-8e036b509570",
+            "user_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4",
+            "contact_type_id": "c7328e37-0557-4fe4-91e9-7c9480b1c799",
+            "value": "bohumila.padelkova@firma.cz",
+            "preferred": false,
+            "rbacobject_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4"
+        },
+        {
+            "id": "9cca23fd-fe4c-46d4-a510-40260eb0fe92",
+            "user_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "georgiana.brozkova@example.com",
+            "preferred": true,
+            "rbacobject_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00"
+        },
+        {
+            "id": "0f290b88-3cf5-4743-afd0-6a2fed02d380",
+            "user_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00",
+            "contact_type_id": "c7328e37-0557-4fe4-91e9-7c9480b1c799",
+            "value": "georgiana.brozkova@firma.cz",
+            "preferred": false,
+            "rbacobject_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00"
+        },
+        {
+            "id": "dd562793-d6b4-4d16-802f-698c3f812409",
+            "user_id": "721543f4-8f5a-4dbd-b573-33150965899b",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "danuse.vojackova@example.com",
+            "preferred": true,
+            "rbacobject_id": "721543f4-8f5a-4dbd-b573-33150965899b"
+        },
+        {
+            "id": "120037bc-f5cf-4715-b298-025a0b97842d",
+            "user_id": "721543f4-8f5a-4dbd-b573-33150965899b",
+            "contact_type_id": "8da078b6-2ecf-478a-a7d2-2f870390fe75",
+            "value": "Marie Vojáčková, +420 729 288 206",
+            "preferred": false,
+            "rbacobject_id": "721543f4-8f5a-4dbd-b573-33150965899b"
+        },
+        {
+            "id": "4464e385-e0e3-4604-8077-b4e39deff20d",
+            "user_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "sabina.maderkova@example.com",
+            "preferred": true,
+            "rbacobject_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81"
+        },
+        {
+            "id": "9b287254-34e9-4c25-8065-57a9fd8d0e5f",
+            "user_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81",
+            "contact_type_id": "c7328e37-0557-4fe4-91e9-7c9480b1c799",
+            "value": "sabina.maderkova@firma.cz",
+            "preferred": false,
+            "rbacobject_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81"
+        },
+        {
+            "id": "5b08d09a-3d12-4686-9554-4043696e48f1",
+            "user_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "stanislav.cenek@example.com",
+            "preferred": true,
+            "rbacobject_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd"
+        },
+        {
+            "id": "e59d60c7-df5b-4f14-a198-0a906cd502e6",
+            "user_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd",
+            "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
+            "value": "+420 766 961 482",
+            "preferred": false,
+            "rbacobject_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd"
+        },
+        {
+            "id": "c63b954d-5efd-4b93-9168-d8ea59a88228",
+            "user_id": "e4a9637d-d494-408f-ad2f-fed4106352cf",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "sofie.cibikova@example.com",
+            "preferred": true,
+            "rbacobject_id": "e4a9637d-d494-408f-ad2f-fed4106352cf"
+        },
+        {
+            "id": "7fa80e77-fdfa-4ecf-a1e3-342faee69d1e",
+            "user_id": "e4a9637d-d494-408f-ad2f-fed4106352cf",
+            "contact_type_id": "c7328e37-0557-4fe4-91e9-7c9480b1c799",
+            "value": "sofie.cibikova@firma.cz",
+            "preferred": false,
+            "rbacobject_id": "e4a9637d-d494-408f-ad2f-fed4106352cf"
+        },
+        {
+            "id": "da8d7969-c7b9-47e4-8b3f-b169b246363f",
+            "user_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "andreas.jandak@example.com",
+            "preferred": true,
+            "rbacobject_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2"
+        },
+        {
+            "id": "b421f020-e978-4d74-a17c-236f7ee2a9e5",
+            "user_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2",
+            "contact_type_id": "8da078b6-2ecf-478a-a7d2-2f870390fe75",
+            "value": "Eva Jandák, +420 741 576 733",
+            "preferred": false,
+            "rbacobject_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2"
+        },
+        {
+            "id": "da694429-0062-4022-8b43-b9f608949dbf",
+            "user_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "rafael.jinsik@example.com",
+            "preferred": true,
+            "rbacobject_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7"
+        },
+        {
+            "id": "6fc34797-b434-43ea-9462-7be6c382c25f",
+            "user_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7",
+            "contact_type_id": "c7328e37-0557-4fe4-91e9-7c9480b1c799",
+            "value": "rafael.jinsik@firma.cz",
+            "preferred": false,
+            "rbacobject_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7"
+        },
+        {
+            "id": "85ec7c5c-fe97-4fd1-b1b9-9249ca44c5c6",
+            "user_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "bela.matulkova@example.com",
+            "preferred": true,
+            "rbacobject_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623"
+        },
+        {
+            "id": "03b2d179-e8d8-4ca3-a783-e262e9da1ec0",
+            "user_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623",
+            "contact_type_id": "8da078b6-2ecf-478a-a7d2-2f870390fe75",
+            "value": "Eva Matulková, +420 754 132 845",
+            "preferred": false,
+            "rbacobject_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623"
+        },
+        {
+            "id": "ee34974d-7b49-41fe-b0e9-f751e603ee9c",
+            "user_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3",
+            "contact_type_id": "fa8aaafd-a338-402e-8c2e-ae52f5805236",
+            "value": "arpad.kaniok@example.com",
+            "preferred": true,
+            "rbacobject_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3"
+        },
+        {
+            "id": "e98f28ce-f7a2-49d2-bac8-bc7a37d8dd7c",
+            "user_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3",
+            "contact_type_id": "19327afc-d7ae-4b7b-8ecc-19273763c26d",
+            "value": "+420 731 251 561",
+            "preferred": false,
+            "rbacobject_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3"
         }
     ],
     "employments": [
         {
             "id": "509aa2d7-905b-4a28-91fc-85790dc81948",
             "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
             "employer_name": "ABC s.r.o.",
             "position": "Software Developer",
             "department": "Vývoj",
             "started": "2021-03-01T00:00:00",
             "finished": "2024-06-30T00:00:00",
-            "description": "Vývoj backendových služeb v Pythonu"
+            "description": "Vývoj backendových služeb v Pythonu",
+            "rbacobject_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3"
         },
         {
             "id": "ec928521-3648-4100-a4f1-556c2b471837",
             "user_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
             "employer_name": "Datové systémy a.s.",
             "position": "Senior Software Developer",
             "department": "Integrace",
             "started": "2024-07-01T00:00:00",
-            "description": "Návrh a vývoj GraphQL API"
+            "description": "Návrh a vývoj GraphQL API",
+            "rbacobject_id": "c33a4d4b-04dd-41ec-9510-d1136dc8bbe3"
         },
         {
             "id": "acd72033-9f13-4b55-bb96-62fe68a05469",
             "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
             "employer_name": "Nemocnice Brno",
             "position": "Analytik",
             "department": "IT oddělení",
             "started": "2019-09-01T00:00:00",
             "finished": "2022-12-31T00:00:00",
-            "description": "Analýza požadavků a správa nemocničního informačního systému"
+            "description": "Analýza požadavků a správa nemocničního informačního systému",
+            "rbacobject_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8"
         },
         {
             "id": "5f74ff92-fb6e-4623-8fc4-ca662d1fdaa3",
             "user_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
             "employer_name": "ABC s.r.o.",
             "position": "Product Owner",
             "department": "Vývoj",
             "started": "2023-01-01T00:00:00",
-            "description": "Řízení backlogu a priorit vývojového týmu"
+            "description": "Řízení backlogu a priorit vývojového týmu",
+            "rbacobject_id": "9d3c3c1f-ffb8-4ee5-9056-1d89880669b8"
         },
         {
             "id": "5011d85b-dd99-4bb4-9271-18285665fad4",
             "user_id": "2932537d-96cf-491d-977d-f09e70210b03",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b08",
             "employer_name": "Stavby Morava s.r.o.",
             "position": "Projektová manažerka",
             "department": "Realizace staveb",
             "started": "2015-04-01T00:00:00",
-            "description": "Koordinace stavebních zakázek"
+            "description": "Koordinace stavebních zakázek",
+            "rbacobject_id": "2932537d-96cf-491d-977d-f09e70210b03"
         },
         {
             "id": "3938be81-28e0-418c-9a75-f7f38f1e5bc0",
             "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b07",
             "employer_name": "Účetní kancelář Novák s.r.o.",
             "position": "Účetní",
             "department": "Mzdy a personalistika",
             "started": "2016-02-01T00:00:00",
             "finished": "2020-08-31T00:00:00",
-            "description": "Zpracování mezd a personální agendy"
+            "description": "Zpracování mezd a personální agendy",
+            "rbacobject_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6"
         },
         {
             "id": "2fe8402d-29e7-4dd7-8094-2c34724e7f40",
             "user_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
             "employer_name": "Datové systémy a.s.",
             "position": "HR specialistka",
             "department": "Personální oddělení",
             "started": "2020-09-01T00:00:00",
-            "description": "Nábor a správa personálních dat"
+            "description": "Nábor a správa personálních dat",
+            "rbacobject_id": "51d101a0-81f1-44ca-8366-6cf51432e8d6"
+        },
+        {
+            "id": "5b4a7700-5104-414f-8c01-f1a3220e6477",
+            "user_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b07",
+            "employer_name": "Základní škola Komenského",
+            "position": "Učitelka",
+            "department": "První stupeň",
+            "started": "2009-05-01T00:00:00",
+            "finished": "2013-03-28T00:00:00",
+            "description": "Výuka na prvním stupni",
+            "rbacobject_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4"
+        },
+        {
+            "id": "2da472d6-c42a-4793-ba60-5b4ca21f95f9",
+            "user_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b08",
+            "employer_name": "Krajská nemocnice Jihlava",
+            "position": "Zdravotní sestra",
+            "department": "Ošetřovatelská péče",
+            "started": "2013-08-01T00:00:00",
+            "description": "Péče o pacienty na interním oddělení",
+            "rbacobject_id": "e286af31-7f83-4e2e-8aff-fa2ed22311f4"
+        },
+        {
+            "id": "b11bcca1-9fe7-400d-af08-8dfe83489aca",
+            "user_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "employer_name": "Pekárna Zlatý klas",
+            "position": "Pekař",
+            "department": "Výroba",
+            "started": "2014-09-01T00:00:00",
+            "finished": "2017-10-28T00:00:00",
+            "description": "Výroba pečiva v ranních směnách",
+            "rbacobject_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00"
+        },
+        {
+            "id": "c201148e-6490-4afb-bb88-d0957313d1c4",
+            "user_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "TechSoft s.r.o.",
+            "position": "Programátor",
+            "department": "Vývoj",
+            "started": "2017-11-01T00:00:00",
+            "description": "Vývoj webových aplikací",
+            "rbacobject_id": "9d95ee27-b898-4c8c-9c5c-f2bb3e7aed00"
+        },
+        {
+            "id": "ccc4737b-4c36-4f0b-81a6-d47631c5642b",
+            "user_id": "721543f4-8f5a-4dbd-b573-33150965899b",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "Univerzita obrany",
+            "position": "Asistent",
+            "department": "Katedra informatiky",
+            "started": "2009-02-01T00:00:00",
+            "finished": "2010-07-28T00:00:00",
+            "description": "Výuka cvičení z programování",
+            "rbacobject_id": "721543f4-8f5a-4dbd-b573-33150965899b"
+        },
+        {
+            "id": "6a3aa978-7b5b-4b34-ade5-5f07c91e4172",
+            "user_id": "721543f4-8f5a-4dbd-b573-33150965899b",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "Překlady Lingua",
+            "position": "Překladatelka",
+            "department": "Překladatelský tým",
+            "started": "2011-12-01T00:00:00",
+            "description": "Překlady technických textů z němčiny",
+            "rbacobject_id": "721543f4-8f5a-4dbd-b573-33150965899b"
+        },
+        {
+            "id": "ce0ca62e-bac0-4f15-beb2-f9d4aac1e15b",
+            "user_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "employer_name": "Agentura Kreativ s.r.o.",
+            "position": "Grafik",
+            "department": "Marketing",
+            "started": "2012-01-01T00:00:00",
+            "finished": "2020-01-28T00:00:00",
+            "description": "Návrh tištěných a online materiálů",
+            "rbacobject_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81"
+        },
+        {
+            "id": "5e8202a1-48b6-4d66-89e3-ab245d91f82d",
+            "user_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b08",
+            "employer_name": "Město Brno",
+            "position": "Referent",
+            "department": "Odbor dopravy",
+            "started": "2020-11-01T00:00:00",
+            "description": "Správa dopravních přestupků",
+            "rbacobject_id": "794c70f9-fe01-470f-b953-d1ed51e3ce81"
+        },
+        {
+            "id": "3021fc76-db05-4e36-ace6-0ea804bc3a3f",
+            "user_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "Moravská banka a.s.",
+            "position": "Analytik rizik",
+            "department": "Řízení rizik",
+            "started": "2014-07-01T00:00:00",
+            "finished": "2016-08-28T00:00:00",
+            "description": "Vyhodnocování úvěrových rizik",
+            "rbacobject_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd"
+        },
+        {
+            "id": "58b28d07-8db2-4dd5-b368-82a411bf4c1d",
+            "user_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "employer_name": "Stavební firma Horák",
+            "position": "Rozpočtář",
+            "department": "Přípravy staveb",
+            "started": "2017-04-01T00:00:00",
+            "description": "Sestavování rozpočtů zakázek",
+            "rbacobject_id": "76852834-6dc3-4b15-b0b9-a7776bf1bbcd"
+        },
+        {
+            "id": "dc8b1965-c0db-4958-95af-b1847e21cd78",
+            "user_id": "e4a9637d-d494-408f-ad2f-fed4106352cf",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b07",
+            "employer_name": "Logistika Olomouc s.r.o.",
+            "position": "Vedoucí skladu",
+            "department": "Sklad",
+            "started": "2011-04-01T00:00:00",
+            "finished": "2015-11-28T00:00:00",
+            "description": "Řízení skladových zásob a směn",
+            "rbacobject_id": "e4a9637d-d494-408f-ad2f-fed4106352cf"
+        },
+        {
+            "id": "63849c70-822b-4a6a-991a-55cefc863214",
+            "user_id": "e4a9637d-d494-408f-ad2f-fed4106352cf",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "Hotel Panorama",
+            "position": "Recepční",
+            "department": "Recepce",
+            "started": "2017-04-01T00:00:00",
+            "description": "Ubytování hostů a rezervace",
+            "rbacobject_id": "e4a9637d-d494-408f-ad2f-fed4106352cf"
+        },
+        {
+            "id": "208da431-e72a-4606-aca4-693b0a09fdd2",
+            "user_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b07",
+            "employer_name": "Právní kancelář Dvořák",
+            "position": "Koncipient",
+            "department": "Občanské právo",
+            "started": "2015-11-01T00:00:00",
+            "finished": "2018-08-28T00:00:00",
+            "description": "Příprava smluv a podání",
+            "rbacobject_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2"
+        },
+        {
+            "id": "93a25403-8294-4fff-9d62-c74d3f8b8682",
+            "user_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "employer_name": "Energie ČR a.s.",
+            "position": "Operátor call centra",
+            "department": "Zákaznická podpora",
+            "started": "2018-04-01T00:00:00",
+            "description": "Řešení požadavků zákazníků",
+            "rbacobject_id": "83c04ec8-368e-4fa1-ac7e-68c9adae0ce2"
+        },
+        {
+            "id": "5e10715d-2724-49fb-a368-be74cf5a8bba",
+            "user_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "employer_name": "Autoservis Novotný",
+            "position": "Automechanik",
+            "department": "Dílna",
+            "started": "2012-05-01T00:00:00",
+            "finished": "2019-08-28T00:00:00",
+            "description": "Opravy osobních vozidel",
+            "rbacobject_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7"
+        },
+        {
+            "id": "15130ee4-7d17-459e-8697-7148bd92f11a",
+            "user_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "Základní škola Komenského",
+            "position": "Učitelka",
+            "department": "První stupeň",
+            "started": "2019-03-01T00:00:00",
+            "description": "Výuka na prvním stupni",
+            "rbacobject_id": "bd2bae08-dca5-4613-8200-9c7ad07191f7"
+        },
+        {
+            "id": "232434da-30ae-4ade-ac08-03d57bee0439",
+            "user_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "Krajská nemocnice Jihlava",
+            "position": "Zdravotní sestra",
+            "department": "Ošetřovatelská péče",
+            "started": "2009-07-01T00:00:00",
+            "finished": "2012-04-28T00:00:00",
+            "description": "Péče o pacienty na interním oddělení",
+            "rbacobject_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623"
+        },
+        {
+            "id": "7db41f54-9e14-4ef8-85f2-e6eb2c1205a2",
+            "user_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "Pekárna Zlatý klas",
+            "position": "Pekař",
+            "department": "Výroba",
+            "started": "2012-02-01T00:00:00",
+            "description": "Výroba pečiva v ranních směnách",
+            "rbacobject_id": "f8d46d52-179c-42d6-86b5-a1cf6ae58623"
+        },
+        {
+            "id": "1afd3afc-b98e-47e2-b784-08815b41a543",
+            "user_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b03",
+            "employer_name": "TechSoft s.r.o.",
+            "position": "Programátor",
+            "department": "Vývoj",
+            "started": "2008-12-01T00:00:00",
+            "finished": "2013-03-28T00:00:00",
+            "description": "Vývoj webových aplikací",
+            "rbacobject_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3"
+        },
+        {
+            "id": "7d006280-df3a-4156-ab91-48279c1d39da",
+            "user_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3",
+            "employment_type_id": "6a7f4f0e-2b8a-4d1e-9c3a-1f5e7d2c9b04",
+            "employer_name": "Univerzita obrany",
+            "position": "Asistent",
+            "department": "Katedra informatiky",
+            "started": "2015-09-01T00:00:00",
+            "description": "Výuka cvičení z programování",
+            "rbacobject_id": "cd0ab986-a8c0-4e75-a09e-14bf41bcefb3"
         }
     ]
 }

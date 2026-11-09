@@ -6,6 +6,10 @@ from src.Dataloaders import LoaderMap
 if typing.TYPE_CHECKING:
     from src.ServiceDefinitions.Domain_Events.EventService import EventService as _EventService
     from src.ServiceDefinitions.Domain_Events.EventInvitationService import EventInvitationService as _EventInvitationService
+    from src.ServiceDefinitions.Domain_Personalities2.ContactService import ContactService as _ContactService
+    from src.ServiceDefinitions.Domain_Personalities2.ContactTypeService import ContactTypeService as _ContactTypeService
+    from src.ServiceDefinitions.Domain_Personalities2.EmploymentService import EmploymentService as _EmploymentService
+    from src.ServiceDefinitions.Domain_Personalities2.EmploymentTypeService import EmploymentTypeService as _EmploymentTypeService
 
 
 @dataclasses.dataclass(frozen=True)
@@ -19,6 +23,26 @@ class ServiceRegistry:
     def EventInvitationService(self) -> type['_EventInvitationService']:
         from src.ServiceDefinitions.Domain_Events.EventInvitationService import EventInvitationService
         return EventInvitationService
+
+    @property
+    def ContactService(self) -> type['_ContactService']:
+        from src.ServiceDefinitions.Domain_Personalities2.ContactService import ContactService
+        return ContactService
+
+    @property
+    def ContactTypeService(self) -> type['_ContactTypeService']:
+        from src.ServiceDefinitions.Domain_Personalities2.ContactTypeService import ContactTypeService
+        return ContactTypeService
+
+    @property
+    def EmploymentService(self) -> type['_EmploymentService']:
+        from src.ServiceDefinitions.Domain_Personalities2.EmploymentService import EmploymentService
+        return EmploymentService
+
+    @property
+    def EmploymentTypeService(self) -> type['_EmploymentTypeService']:
+        from src.ServiceDefinitions.Domain_Personalities2.EmploymentTypeService import EmploymentTypeService
+        return EmploymentTypeService
 
 
 SERVICES = ServiceRegistry()

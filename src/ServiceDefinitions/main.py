@@ -38,6 +38,7 @@ from sqlalchemy import inspect
 from sqlalchemy.orm.properties import ColumnProperty, RelationshipProperty
 
 from src.DBDefinitions import ComposeConnectionString, startEngine
+from src.DBDefinitions.main import coerce_column_value
 from src.Dataloaders import LoaderMap
 from src.ServiceDefinitions.BaseService import (
     BaseService,
@@ -243,7 +244,7 @@ def split_columns_and_relationships(
             continue
 
         if key in column_names:
-            column_values[key] = value
+            column_values[key] = coerce_column_value(model_cls, key, value)
         elif key in relationships:
             relationship_values[key] = value
         else:
@@ -412,7 +413,8 @@ def get_primary_key_value(model_cls: type, payload: JsonDict) -> typing.Any:
             f"Missing primary key '{primary_key_name}' in payload"
         )
 
-    return payload[primary_key_name]
+    # loader paruje vysledky podle UUID, str id by nikdy nenasel
+    return coerce_column_value(model_cls, primary_key_name, payload[primary_key_name])
 
 
 def parse_include(payload: JsonDict) -> set[str]:
@@ -693,26 +695,26 @@ async def run_async(args: argparse.Namespace) -> typing.Any:
         operation = args.operation.lower()
 
         if operation in {"create", "c"}:
-            return await op_create(ctx, service_cls, payload)
+            result = await op_create(ctx, service_cls, payload)
+        elif operation in {"get", "read", "r", "single"}:
+            result = await op_get(ctx, service_cls, payload)
+        elif operation in {"list", "multi", "rmulti", "page"}:
+            result = await op_list(ctx, service_cls, payload)
+        elif operation in {"update", "u"}:
+            result = await op_update(ctx, service_cls, payload)
+        elif operation in {"delete", "d", "remove"}:
+            result = await op_delete(ctx, service_cls, payload)
+        else:
+            result = await op_call_service_method(
+                ctx=ctx,
+                service_cls=service_cls,
+                operation=args.operation,
+                payload=payload,
+            )
 
-        if operation in {"get", "read", "r", "single"}:
-            return await op_get(ctx, service_cls, payload)
-
-        if operation in {"list", "multi", "rmulti", "page"}:
-            return await op_list(ctx, service_cls, payload)
-
-        if operation in {"update", "u"}:
-            return await op_update(ctx, service_cls, payload)
-
-        if operation in {"delete", "d", "remove"}:
-            return await op_delete(ctx, service_cls, payload)
-
-        return await op_call_service_method(
-            ctx=ctx,
-            service_cls=service_cls,
-            operation=args.operation,
-            payload=payload,
-        )
+        # loadery zapisuji do session, v aplikaci commituje SessionCommitExtension
+        await session.commit()
+        return result
 
 
 def create_arg_parser() -> argparse.ArgumentParser:

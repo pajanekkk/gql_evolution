@@ -11,6 +11,7 @@ from src.ServiceDefinitions.BaseService import (
     ServiceExceptionWithCode,
     filter_kwargs_for_callable,
     maybe_await,
+    operation_errors,
 )
 
 
@@ -197,6 +198,49 @@ async def test_execute_service_method_maps_unexpected_exception_with_origin():
 
     assert result["msg"] == "Unexpected service error"
     assert result["code"] == "RUNTIME-CODE"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    "exception",
+    [
+        sqlalchemy.exc.SQLAlchemyError("db failed"),
+        ServiceExceptionWithCode("business rule failed", code="SERVICE-CODE"),
+        RuntimeError("boom"),
+    ],
+)
+async def test_execute_service_method_flags_failure_for_operation_rollback(exception):
+    async def operation():
+        raise exception
+
+    async def error(msg, code):
+        return {"msg": msg, "code": code}
+
+    errors = []
+    token = operation_errors.set(errors)
+    try:
+        result = await FakeService.ExecuteServiceMethod(operation(), Error=error)
+    finally:
+        operation_errors.reset(token)
+
+    assert len(errors) == 1
+    assert errors[0]["msg"] == result["msg"]
+    assert errors[0]["code"] == result["code"]
+
+
+@pytest.mark.asyncio
+async def test_execute_service_method_success_does_not_flag_failure():
+    async def operation():
+        return {"id": "ok"}
+
+    errors = []
+    token = operation_errors.set(errors)
+    try:
+        await FakeService.ExecuteServiceMethod(operation(), Error=lambda **kwargs: kwargs)
+    finally:
+        operation_errors.reset(token)
+
+    assert errors == []
 
 
 @pytest.mark.asyncio

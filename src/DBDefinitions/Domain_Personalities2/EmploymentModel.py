@@ -1,6 +1,7 @@
 import datetime
 from typing import Optional
 
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 
 from src.DBDefinitions.BaseModel import BaseDBModel, UUIDFKey, IDType
@@ -14,6 +15,13 @@ class EmploymentModel(BaseDBModel):
         nullable=True,
         default=None,
         comment="uživatel, kterého se zaměstnání týká",
+    )
+    employment_type_id: Mapped[Optional[IDType]] = mapped_column(
+        ForeignKey("employmenttypes.id"),
+        index=True,
+        nullable=True,
+        default=None,
+        comment="typ zaměstnání z katalogu (stromu) employmenttypes, např. Dohoda o provedení práce",
     )
     employer_name: Mapped[Optional[str]] = mapped_column(
         default=None, nullable=True, comment="název zaměstnavatele"

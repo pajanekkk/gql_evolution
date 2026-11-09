@@ -6,6 +6,7 @@ import pytest
 
 from src.GraphTypeDefinitions.GraphQLContext import GraphQLContext
 from src.GraphTypeDefinitions.SessionCommitExtension import SessionCommitExtension, _maybe_await
+from src.ServiceDefinitions.BaseService import BaseService, ServiceExceptionWithCode, operation_errors
 from src.ServiceDefinitions.ServiceContext import ServiceContext
 
 
@@ -217,6 +218,62 @@ async def test_on_operation_rolls_back_when_context_has_errors():
 
     assert session.commits == 0
     assert session.rollbacks == 1
+
+
+@pytest.mark.asyncio
+async def test_on_operation_rolls_back_mutation_when_service_method_fails():
+    session = FakeSession()
+    maker = FakeSessionMaker(session)
+    context = GraphQLContext(
+        session_maker_factory=lambda: maker,
+        loaders_factory=lambda received_session: object(),
+    )
+
+    extension = SessionCommitExtension()
+    extension.execution_context = SimpleNamespace(
+        context=context,
+        operation=SimpleNamespace(operation=FakeOperationType("mutation")),
+    )
+
+    async def partially_applied_change():
+        raise ServiceExceptionWithCode("second step failed", code="unit")
+
+    operation = extension.on_operation()
+    await operation.__anext__()
+    # resolver: chyba ze service se vrati jako typovy error objekt, ne vyjimka
+    result = await BaseService.ExecuteServiceMethod(
+        partially_applied_change(),
+        Error=lambda msg, code: {"msg": msg, "code": code},
+    )
+    with pytest.raises(StopAsyncIteration):
+        await operation.__anext__()
+
+    assert result["code"] == "unit"
+    assert session.commits == 0
+    assert session.rollbacks == 1
+    assert operation_errors.get() is None
+
+
+@pytest.mark.asyncio
+async def test_on_operation_ignores_errors_left_by_previous_operation_on_shared_context():
+    session = FakeSession()
+    maker = FakeSessionMaker(session)
+    context = GraphQLContext(
+        session_maker_factory=lambda: maker,
+        loaders_factory=lambda received_session: object(),
+    )
+    context["errors"] = [{"msg": "failure of a previous operation"}]
+
+    extension = SessionCommitExtension()
+    extension.execution_context = SimpleNamespace(
+        context=context,
+        operation=SimpleNamespace(operation=FakeOperationType("mutation")),
+    )
+
+    await drive_successful_operation(extension)
+
+    assert session.commits == 1
+    assert session.rollbacks == 0
 
 
 @pytest.mark.asyncio

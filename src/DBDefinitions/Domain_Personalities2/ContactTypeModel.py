@@ -14,7 +14,6 @@ class ContactTypeModel(BaseDBModel):
     parent_id_attribute_name = "parent_id"
     children_attribute_name = "children"
 
-    # Materialized path technique
     path: Mapped[Optional[str]] = mapped_column(
         index=True,
         nullable=True,

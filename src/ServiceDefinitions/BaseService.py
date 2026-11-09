@@ -1,3 +1,4 @@
+import contextvars
 import datetime
 import inspect
 import logging
@@ -9,6 +10,10 @@ from uoishelpers.dataloaders.IDLoader import IDLoader
 
 T = typing.TypeVar('T', bound=IDLoader)
 logger = logging.getLogger(__name__)
+
+# Seznam chyb aktualni operace (GraphQL request). Nastavuje ho SessionCommitExtension;
+# neprazdny seznam znamena rollback cele operace.
+operation_errors: contextvars.ContextVar[list | None] = contextvars.ContextVar('operation_errors', default=None)
 
 
 class ServiceExceptionWithCode(Exception):
@@ -110,7 +115,7 @@ class BaseService(typing.Generic[T]):
 
         except sqlalchemy.exc.SQLAlchemyError as e:
             logger.exception("Database service operation failed")
-            return await cls.call_callback(
+            return await cls.call_error_callback(
                 Error,
                 msg=f"Database error: {e} code({getattr(e, 'code', 'unknown')})",
                 exception=e,
@@ -118,7 +123,7 @@ class BaseService(typing.Generic[T]):
             )
 
         except ServiceExceptionWithCode as e:
-            return await cls.call_callback(
+            return await cls.call_error_callback(
                 Error,
                 msg=f"Service error: {e} code({e.code})",
                 exception=e,
@@ -128,11 +133,20 @@ class BaseService(typing.Generic[T]):
         except Exception as e:
             code = getattr(e, 'code', 'unknown')
             logger.exception("Unexpected service operation failure (code=%s)", code)
-            return await cls.call_callback(
+            return await cls.call_error_callback(
                 Error,
                 msg="Unexpected service error",
                 code=code,
             )
+
+    @classmethod
+    async def call_error_callback(cls, Error, *, msg, code, exception=None):
+        # Chyba se vraci jako typovy error objekt (zadna vyjimka), proto ji je nutne
+        # zapsat do chyb operace, jinak by SessionCommitExtension castecne zmeny commitla.
+        errors = operation_errors.get()
+        if errors is not None:
+            errors.append({'msg': msg, 'code': code, '_input': {}})
+        return await cls.call_callback(Error, msg=msg, exception=exception, code=code)
 
     @classmethod
     async def call_callback(cls, callback, *args, **kwargs):

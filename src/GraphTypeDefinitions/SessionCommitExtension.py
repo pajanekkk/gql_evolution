@@ -7,6 +7,7 @@ from strawberry.extensions import SchemaExtension
 
 from src.Dataloaders import LoaderMap
 from src.DBDefinitions.runtime import Database
+from src.ServiceDefinitions.BaseService import operation_errors
 from src.ServiceDefinitions.ServiceContext import ServiceContext
 
 
@@ -78,9 +79,13 @@ class SessionCommitExtension(SchemaExtension):
         async_session_maker = await self._get_session_maker(context)
 
         async with async_session_maker() as session:
+            errors_token = None
             try:
                 context['session'] = session
-                context.setdefault('errors', [])
+                # chyby patri jen teto operaci (kontext muze byt sdileny, napr. v testech);
+                # chyby ze service vrstvy (ExecuteServiceMethod) se zapisuji do stejneho seznamu
+                context['errors'] = []
+                errors_token = operation_errors.set(context['errors'])
 
                 loaders = await self._create_loaders(context, session)
                 context['loaders'] = loaders
@@ -127,4 +132,7 @@ class SessionCommitExtension(SchemaExtension):
                 await session.rollback()
                 print(f'Exception during operation {e}, doing rollback', flush=True)
                 raise
+            finally:
+                if errors_token is not None:
+                    operation_errors.reset(errors_token)
         print(f'Session closed for {operation_type}', flush=True)

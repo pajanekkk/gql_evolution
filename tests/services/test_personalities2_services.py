@@ -36,6 +36,7 @@ from src.GraphTypeDefinitions.GraphQLContext import GraphQLContext
 from src.GraphTypeDefinitions.SessionCommitExtension import SessionCommitExtension
 from src.ServiceDefinitions.BaseService import ServiceExceptionWithCode
 from src.ServiceDefinitions.ServiceContext import ServiceContext
+from src.ServiceDefinitions.main import op_update
 
 SYSTEMDATA = pathlib.Path(__file__).resolve().parents[2] / "systemdata.json"
 
@@ -173,6 +174,36 @@ async def test_update_with_stale_lastchange_is_rejected(session_maker, service_n
     async with session_maker() as session:
         row = await session.get(model, entity_id)
         assert getattr(row, field) == original
+
+
+@pytest.mark.asyncio
+async def test_cli_update_changes_only_fields_from_payload(session_maker):
+    entity_id, user_id = uuid.uuid4(), uuid.uuid4()
+
+    async with session_maker() as session:
+        ctx = service_ctx(session)
+        created = await ctx.Services.ContactService.Create(
+            ctx=ctx,
+            entity=ContactModel(id=entity_id, user_id=user_id, value="puvodni@example.com"),
+        )
+        created_at, lastchange = created.created, created.lastchange
+        await session.commit()
+
+    async with session_maker() as session:
+        ctx = service_ctx(session)
+        await op_update(
+            ctx,
+            ctx.Services.ContactService,
+            {"id": str(entity_id), "lastchange": lastchange.isoformat(), "preferred": True},
+        )
+        await session.commit()
+
+    async with session_maker() as session:
+        row = await session.get(ContactModel, entity_id)
+        assert row.preferred is True
+        assert row.value == "puvodni@example.com"
+        assert row.user_id == user_id
+        assert row.created == created_at
 
 
 @pytest.mark.asyncio

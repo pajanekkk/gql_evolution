@@ -30,6 +30,7 @@ import datetime
 import decimal
 import inspect as pyinspect
 import json
+import types
 import typing
 import uuid
 
@@ -554,7 +555,9 @@ async def op_update(
 
     get_primary_key_value(model_cls, entity_payload)
 
-    entity = build_instance(model_cls, entity_payload)
+    # jen pole z payloadu; instance modelu by mela ostatni pole None a update by je smazal
+    column_values, _relationship_values = split_columns_and_relationships(model_cls, entity_payload)
+    entity = types.SimpleNamespace(**column_values)
 
     result = await service_cls.Update(
         ctx=ctx,
